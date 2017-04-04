@@ -1,0 +1,32 @@
+<page-root>
+  <page-content class="m-4">
+    
+
+    <div class="mb-4">
+      <ui-input type="text" [invalid]="isDirty && (!deviceInfo ||!deviceInfo.name || deviceInfo.name.length<1)" (valueChange)="isDirty=false" [(value)]="deviceInfo.name" autocomplete="nope" label="Device friendly name"
+        placeholder="Enter friendly name"></ui-input>
+         <div class="mt-1">
+      </div>
+    </div>
+
+<span class="mb-2"></span>
+
+    <div class="mb-4">
+      <ui-dropdown  *ngIf="!createGroup" [items]="groupList"  (selectedItemChange)="selectedGroup = $event"    optionField="name" selectedItemIndex="1" label="Device group"
+        placeholder="Select device group"></ui-dropdown>
+     <div *ngIf="createGroup"> 
+       <ui-input  [(value)]="selectedGroup.name"   label="Device group"
+        placeholder="Enter group name"></ui-input>
+      <ui-textarea  class="pt-4"  [(value)]="selectedGroup.description"   label="Group description (optional)"
+        placeholder="Enter a short decsription for this device group"></ui-textarea>
+     </div>
+      <div class="mt-1">
+         <ui-checkbox class="text-muted" [(checked)]="createGroup"  label="Create new group"></ui-checkbox>
+      </div>
+    </div>
+  </page-content>
+
+  <page-footer>
+    <button class="m-1 mt-2 btn btn-primary btn-lg btn-block" (click)="continueButtonClick()">Complete Setup</button>
+  </page-footer>
+</page-root>

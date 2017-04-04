@@ -1,0 +1,29 @@
+<label class="wrapper">
+    <span id="label" class="animated fadeInUp text-muted" *ngIf="showLabel" [innerText]="label" ></span>
+  <div class="d-flex">
+        <i class="ion-wifi pr-3 h3 icon-left text-muted"></i>
+      <input #input (keydown)="keypress($event)"  
+      [autocomplete]="autocomplete"
+    class="field-value text-truncate" (focus)="setFocus(true);" 
+    (blur)="setFocus(false);" [value]="selected" 
+    [placeholder]="placeholder"   
+    (input)="onValueChange($event)"  list="itemList"/>
+    <span class="flex-grow"></span>
+
+    <!--<i class="ion-android-arrow-dropdown pl-3 h4 text-muted"></i>-->
+    <i class="ion-ios-checkmark-empty pl-3 h4 icon-right text-muted"></i>
+    </div>
+
+<!--<select [(ngModel)]="selectItem" id="dd-select">
+     <option class="list-group-item" [ngValue]="item" *ngFor="let item of items; let i=index;" >{{optionField?item[optionField]:item}}</option>
+</select>-->
+</label>
+<datalist class="" id="itemList">
+    <option class="list-group-item" [ngValue]="item" *ngFor="let item of items; let i=index;" >{{optionField?item[optionField]:item}}</option>
+</datalist>
+<!--<ul *ngIf="open" class="list-group">
+  <li class="list-group-item" *ngFor="let item of items; let i=index;" [class.active]="actives[i].active" (click)="selectItemByIndex(i)">
+    <div *ngIf="optionField">{{item[optionField]}}</div>
+    <div *ngIf="!optionField">{{item}}</div>
+  </li>
+</ul>-->

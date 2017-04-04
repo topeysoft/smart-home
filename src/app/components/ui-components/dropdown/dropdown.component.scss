@@ -1,0 +1,132 @@
+        @import '../../../../styles/current-theme.scss';
+        $foreground:map-get($colors, foreground);
+        ui-dropdown {
+          position: relative;
+          display: block;
+          border-bottom: 1px solid transparentize($foreground, .8);
+          margin-bottom: -.15rem;
+          &.invalid {
+            .icon-left,
+            .icon-right {
+              color: $brand-danger !important;
+            }
+          }
+          &.invalid {
+            border-bottom: 1px solid transparentize($brand-danger, .8);
+            color: $brand-danger;
+          }
+          &.invalid input {
+            color: $brand-danger;
+          }
+          &.invalid label::after {
+            color: $brand-danger;
+            background: $brand-danger;
+          }
+          .placeholder {
+            position: absolute;
+            left: 0;
+            top: 0;
+            line-height: 4rem;
+            height: 100%;
+            width: 100%;
+            font-size: 1.2rem;
+            padding-left: 3rem;
+            padding-right: 3rem;
+          }
+          select {
+            position: relative;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            border: none;
+            margin: 0;
+            font-size: 1.8rem;
+            padding: 0;
+            color: $foreground;
+            background: transparent;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            -webkit-transition: width .5s ease-out;
+            -moz-transition: width .5s ease-out;
+            -ms-transition: width .5s ease-out;
+            -o-transition: width .5s ease-out;
+            transition: width .5s ease-out;
+            outline: none;
+            option {
+              font-size: 1rem;
+              color: initial;
+              padding-left: .5rem;
+              padding-right: .5rem;
+            }
+          }
+          label {
+            padding: .2em .5rem;
+            margin: 0;
+            display: flex;
+            flex-flow: column;
+            position: static;
+            height: 4rem;
+          }
+          label::after {
+            content: '';
+            background: $brand-primary;
+            position: absolute;
+            width: 0%;
+            height: 1px;
+            bottom: -0rem;
+            left: 0;
+            -webkit-transition: width .5s ease-out;
+            -moz-transition: width .5s ease-out;
+            -ms-transition: width .5s ease-out;
+            -o-transition: width .5s ease-out;
+            transition: width .5s ease-out;
+          }
+          &.focused label::after {
+            width: 100%;
+          }
+          &.focus input,
+          {
+            font-size: 1.2rem;
+          }
+          &.empty input,
+          {
+            font-size: 1.2rem;
+          }
+          input:focus {
+            border: none;
+            outline: none;
+          }
+          #label {
+            border: none;
+            margin: 0;
+            padding: 0;
+            font-size: .7rem;
+            text-transform: uppercase;
+          }
+          .list-group,
+          .list-group li:first-child {
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+          }
+          .list-group {
+            border-top-right-radius: 0;
+            border-top-left-radius: 0;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            z-index: 200000;
+            box-sizing: border-box;
+            -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+            box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+          }
+          .list-group li {
+            width: 100%;
+            cursor: pointer;
+          }
+          .list-group .list-group-item:hover {
+            background: lighten($brand-primary, 20);
+          }
+        }

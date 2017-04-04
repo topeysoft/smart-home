@@ -1,0 +1,39 @@
+page-root {
+  display: flex;
+  position: fixed;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-bottom: map-get($sizes, header-height);
+  flex-direction: column;
+  page-content {
+    flex-grow: 1;
+    padding:0 1rem;
+  }
+  page-title{
+    display:block;
+    font-size:2rem;
+    color: map-get($colors, primary);
+  }
+  page-footer {
+    position: relative;
+    
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    background: map-get($colors, background);
+    height: map-get($sizes, footer-height);
+    @if(map-get($layout-config, show-footer-border)==true) {
+      border-top: .1rem solid transparentize(map-get($colors, foreground), .95);
+    }
+    &.fixed{
+      position: fixed;
+    }
+  }
+}
+
+.flex-grow{
+  flex-grow: 1;
+}

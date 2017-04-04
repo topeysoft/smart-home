@@ -1,0 +1,9 @@
+@import '../../../../styles/current-theme.scss';
+:host{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    .icon{
+        font-size: 1.5rem;
+    }
+}

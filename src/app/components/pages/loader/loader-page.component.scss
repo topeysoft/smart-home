@@ -1,0 +1,28 @@
+
+loader-page {
+    .loading-container {
+    background: map-get($colors, background);
+    line-height: 100vh;
+    height: 110vh;
+    width: 110vw;
+    top: -5vh;
+    left: -10vw;
+    padding-top: 5vh;
+    padding-left: 5vw;
+    position: fixed;
+    text-align: center;
+    z-index: 2000000;
+  }
+  .loading-container.relative {
+    line-height: 100vh;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding-top: 0;
+    padding-left: 0;
+    position: relative;
+    text-align: center;
+    z-index: 2000000;
+  }
+}

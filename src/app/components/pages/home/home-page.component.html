@@ -1,0 +1,9 @@
+<page-root>
+  <page-content>
+    <div *ngFor="let device of devices;">
+      <div *ngFor="let node of device.nodes;">
+        <device-node-widget (widgetClick)="showNodeDetail(node)" (iconClick)="toggleNode(node)" [node]="node"></device-node-widget>
+      </div>
+    </div>
+  </page-content>
+</page-root>

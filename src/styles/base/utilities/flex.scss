@@ -1,0 +1,41 @@
+.flex,
+flexbox, 
+.flexbox{
+    display: flex;
+}
+.no-flex-grow{
+    flex-grow: 0;
+}
+.flex-row{
+    flex-flow: row;
+}
+.flex-row-r{
+    flex-flow: row-reverse;
+}
+.flex-col{
+    flex-flow: column;
+}
+.flex-col-r{
+    flex-flow:column-reverse;
+}
+
+.flex-grow{
+    flex-grow: 1;
+}
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
+
+    flexbox.right-flex > *, .flexbox.right-flex > * {
+        margin-left: auto;
+    }
+
+fill-flex, .fill-flex {
+    flex-grow: 1;
+}
+
+
+flexbox.right-flex > *, .flexbox.right-flex > * {
+    margin-left: auto;
+}

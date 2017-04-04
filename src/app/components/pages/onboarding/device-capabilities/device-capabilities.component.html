@@ -1,0 +1,36 @@
+<page-root>
+  <page-content>
+    <ui-list >
+      <list-item *ngFor="let node of homieDeviceInfo.nodes" class="d-flex flex-row ">
+        <div class="align-middle d-flex m-2 pl-3 pr-3 item-icon">
+          <span class="display-1 text-muted"><i class="{{getIcon(node)}}"></i>
+          </span>
+        </div>
+        <item-detail class="flex-grow p-2">
+          <item-title>{{node.id}}</item-title>
+          <div *ngFor="let capability of node.capabilities; let isLastCapability=last;">
+            <span class="text-muted">{{capability.name}}</span>
+            <span class="text-muted" *ngIf="!isLastCapability">, </span>
+          </div>
+        </item-detail>
+
+      </list-item>
+      <list-item *ngIf="!homieDeviceInfo || !homieDeviceInfo.nodes || homieDeviceInfo.nodes.length<1" class="d-flex flex-row ">
+        <div class="align-middle d-flex m-2 pl-3 pr-3 item-icon">
+          <span class="display-1 text-muted"><i class="{{getIcon('')}}"></i>
+          </span>
+        </div>
+        <item-detail class="flex-grow p-2">
+          <item-title>Generic device</item-title>
+          <div >
+            <span class="text-muted">Capabilities are unknown</span>
+          </div>
+        </item-detail>
+
+      </list-item>
+    </ui-list>
+  </page-content>
+  <page-footer>
+    <button class="m-1 mt-2 btn btn-primary btn-lg btn-block" (click)="continueButtonClick()">WiFi Setup</button>
+  </page-footer>
+</page-root>

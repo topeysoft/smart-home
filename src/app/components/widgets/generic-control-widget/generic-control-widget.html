@@ -1,0 +1,10 @@
+  <div class="p-4"><span class="text-muted">STATUS:</span><span class="text-primary">{{isOff?'OFF':'ON'}}</span></div>
+<div id="switch" >
+  <div id="wrapper" [class.off]="isOff">
+    <span [class.active]="!isOff" (click)="isOff=false">NO</span>
+    <span [class.active]="isOff" (click)="isOff=true">OFF</span>
+  </div>
+  <div id="slider" [class.disabled]="isOff">
+      <span class="knob"></span>
+  </div>
+</div>

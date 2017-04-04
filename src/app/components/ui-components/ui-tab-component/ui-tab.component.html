@@ -1,0 +1,22 @@
+<ul class="nav nav-tabs">
+  <li *ngFor="let tab of tabArray; let i=index;"  class="nav-item" (click)="handleTabClick(i)">
+    <span [class.active]="tab.active" class="nav-link" href="#">{{tab.title}}</span>
+  </li>
+  <!--<li class="nav-item">
+    <span class="nav-link" href="#">JavaScripts</span>
+  </li>
+  <li class="nav-item">
+    <span class="nav-link" href="#">HTML Metadata</span>
+  </li>
+  <li class="nav-item">
+    <span class="nav-link disabled" href="#">Disabled</span>
+  </li>-->
+</ul>
+<div class="tab-content">
+  <div [ngTemplateOutlet]="tab.template" template="ngFor let tab of tabArray let i=index;"  [class.active]="tab.active" class="tab-pane animated {{tabAnimation}}"  role="tabpanel"></div>
+</div>
+ 
+  <!--<template  ngFor="let tab of tabArray; let i=index;" 
+  >
+    <h1>{{tab.title}}</h1> {{tab.content}}
+    </template>-->

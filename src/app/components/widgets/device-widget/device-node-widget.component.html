@@ -1,0 +1,15 @@
+ <widget-parent  class="d-flex" >
+            <widget-icon (click)="onIconClick()" class="display-2 text-center text-muted" >
+              <i class="{{getIcon()}}"></i>
+            </widget-icon>
+          <widget-content class="flex-grow" (click)="onWidgetClick()">
+            <widget-title class="text-center">{{getDisplayName()}}</widget-title>
+            <div class="text-muted" >
+              {{getDescription()}}
+            </div>
+            <div class="text-muted" *ngFor="let capability of node.capabilities; let isLastCapability=last;">
+              {{capability.name}} 
+              <span class *ngIf="!isLastCapability">, </span>
+            </div>
+          </widget-content>
+      </widget-parent>

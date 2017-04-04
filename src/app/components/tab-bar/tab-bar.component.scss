@@ -1,0 +1,24 @@
+@import '../../../styles/current-theme.scss';
+:host {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  background: map-get($colors, background);
+  height: map-get($sizes, tab-bar-height);
+  @if(map-get($layout-config, show-tab-bar-border)==true) {
+    border-top: .1rem solid transparentize(map-get($colors, foreground), .95);
+  }
+  tab-item {
+    flex-grow: 1;
+    border-right: .1rem solid transparentize(map-get($colors, foreground), .95);
+    &:last-child {
+      border-right: none;
+    }
+    &.active {
+      border-top: .3rem solid transparentize(map-get($colors, primary), .2);
+      ;
+    }
+  }
+}

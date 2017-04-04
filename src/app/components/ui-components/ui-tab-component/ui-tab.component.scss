@@ -1,0 +1,27 @@
+@import '../../../../styles/current-theme.scss';
+
+:host{
+    display: block;
+    flex-direction: column;
+}
+
+:host .nav-link{
+    text-transform: uppercase;
+    box-sizing: border-box;
+    border-bottom: .3rem solid transparent;    
+}
+:host .tab-pane{
+    background: white;
+    border: .1rem solid #dddddd;    
+    border-top: .3rem solid transparent; 
+    padding: 1rem;   
+}
+// :host .nav-link.active{
+//     border-bottom: .3rem solid lighten($brand-primary, 20);
+// }
+// :host .nav-link:hover{
+//     border-bottom: .1rem solid lighten($brand-primary, 20);
+// }
+// :host .nav.nav-tabs{
+//     border-bottom: .1rem solid lighten($brand-info, 20);
+// }

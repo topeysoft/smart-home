@@ -1,0 +1,9 @@
+<div class="wrapper">
+    <menu-list >
+        <menu-item menuClose [class.with-border]="firstItem" (click)="itemAction(item)" *ngFor="let item of navigator.leftMenuItems; let firstItem=first;">
+           <menu-icon> <i class="{{item.icon}}"></i></menu-icon>
+           <menu-text class="flex-grow"> {{item.title}}</menu-text>
+        </menu-item>
+    </menu-list>
+</div>
+<!--<div id="overlay" menuClose></div>-->

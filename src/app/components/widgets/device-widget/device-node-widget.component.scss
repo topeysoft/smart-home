@@ -1,0 +1,31 @@
+widget-parent {
+    display: block;
+    position: relative;
+    margin-bottom: 1rem;
+    cursor:pointer;
+    border: .1rem solid transparentize(lighten(map-get($colors, background), 5), .1);
+    background: transparentize(lighten(map-get($colors, background), 2), .15);
+    -webkit-box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3);
+    font-weight: normal;
+     &:active {
+        background: $action-active-bg-primary;
+      }
+    widget-icon {
+      padding: 1rem;
+      // margin-right: .5rem;
+      width: 7rem;
+      position: relative;
+      display: block;
+       &:active {
+        background: $action-active-bg-primary;
+      }
+    }
+    widget-content {
+      padding: 1rem;
+      widget-title {
+        font-size: 1.6rem;
+      }
+    }
+  
+  }

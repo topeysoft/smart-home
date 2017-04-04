@@ -1,0 +1,61 @@
+@import '../../../../styles/current-theme.scss';
+ui-textarea {
+  position: relative;
+  display: block;
+  label {
+    padding: .2em .5rem;
+    margin: 0;
+    display: flex;
+    flex-flow: column;
+    position: static;
+    min-height: 3rem;
+    background: transparent;
+  }
+  &.border-shown label,
+  &.focused label {
+    // border: .1rem solid $border-color-default;
+    border: none;
+    border-bottom: 1px solid transparentize($foreground, .8);
+  }
+  label::after {
+    content: '';
+    background: $brand-primary;
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    bottom: -0rem;
+    left: 0;
+    -webkit-transition: width .5s ease-out;
+    -moz-transition: width .5s ease-out;
+    -ms-transition: width .5s ease-out;
+    -o-transition: width .5s ease-out;
+    transition: width .5s ease-out;
+  }
+  &.focused label::after {
+    width: 100%;
+  }
+  textarea {
+    border: none;
+    margin: 0;
+    padding: 0;
+    padding-top: 1rem;
+    flex-grow: 1;
+    font-size: 1.8rem;
+    transition: all .5s cubic-bezier();
+    background: transparent;
+  }
+  &.empty textarea {
+    font-size: 1.2rem;
+  }
+  textarea:focus {
+    border: none;
+    outline: none;
+  }
+  #label {
+    border: none;
+    margin: 0;
+    padding: 0;
+    font-size: .7rem;
+    text-transform: uppercase;
+  }
+}

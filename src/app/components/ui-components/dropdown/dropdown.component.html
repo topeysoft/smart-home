@@ -1,0 +1,17 @@
+<label class="wrapper">
+    <span id="label" class="animated fadeInUp text-muted" *ngIf="showLabel" [innerText]="label" ></span>
+  <div class="d-flex">
+        <i *ngIf="icon" class="{{icon}} h3 mr-3 icon-left text-muted"></i>
+        <span *ngIf="!selectedItem" class="placeholder text-muted text-truncate">{{placeholder}}</span>
+    <select   [(ngModel)]="selectedItem" id="dd-select" 
+    #input (keydown)="keypress($event)" 
+    class="field-value text-truncate flex-grow" (focus)="setFocus(true);" 
+    (blur)="setFocus(false);" 
+    (change)="onValueChange(selectedItem)">
+     <option *ngIf="!items||items.length<0" disabled="disabled">{{placeholder}}</option>
+     <option class="list-group-item" [ngValue]="item" *ngFor="let item of items; let i=index;" >{{optionField?item[optionField]:item}}</option>
+</select>
+    <i class="ion-android-arrow-dropdown pr-2 h4 text-muted"></i>
+    <i class="ion-ios-checkmark-empty h4 icon-right text-muted"></i>
+    </div>
+</label>

@@ -1,0 +1,7 @@
+<div class="loading-container" [class.relative]="relative">
+  <div *ngIf="displayText" class="display-4" [innerHTML]="displayText"></div>
+  <div class="loader-wrapper">
+    <div class="loading"></div>
+    <div id="loading-text">{{text}}</div>
+  </div>
+</div>

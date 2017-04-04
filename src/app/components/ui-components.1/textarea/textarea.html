@@ -1,0 +1,4 @@
+<label class="wrapper">
+    <span id="label" class="animated fadeInUp" *ngIf="showLabel" [innerText]="label" ></span>
+    <textarea [disabled]="disabled" [rows]="minRow" #textarea  class="field-value" (focus)="setFocus(true);" (blur)="setFocus(false);" [value]="value" [placeholder]="label"   (input)="onValueChange($event)"  ></textarea>
+</label>

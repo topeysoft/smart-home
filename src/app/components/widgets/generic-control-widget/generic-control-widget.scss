@@ -1,0 +1,67 @@
+generic-control-widget {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  #switch {
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+    #slider {
+      background: rgba(0, 0, 0, 0.3);
+      margin-right: auto;
+      width: 2rem;
+      -webkit-box-shadow: inset 1px 4px 5px 0 rgba(0, 0, 0, 0.3);
+      box-shadow: inset 1px 4px 5px 0 rgba(0, 0, 0, 0.3);
+      border: .2rem solid $action-active-bg-primary;
+      position: relative;
+      .knob {
+        background: $action-active-bg-primary;
+        width: 1.6rem;
+        height: 3rem;
+        top: 3rem;
+        left: .1rem;
+        position: absolute;
+        -webkit-box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.3);
+      }
+      &.disabled {
+          border-color: transparentize($gray-light, .8);
+        .knob {
+          background: transparentize($gray-light, .5);
+          display: none;
+        }
+      }
+    }
+    #wrapper {
+      width: 15rem;
+      height: 30rem;
+      background: $action-active-bg-primary;
+      font-size: 1.6rem;
+      margin: auto;
+      margin-right: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      -webkit-box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.3);
+      box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.3);
+      &:active {
+        background: $action-active-bg-primary;
+      }
+      &.off {
+        -webkit-box-shadow: 1px -4px 5px 0 rgba(0, 0, 0, 0.3);
+        box-shadow: 1px -4px 5px 0 rgba(0, 0, 0, 0.3);
+      }
+      span {
+        width: 15rem;
+        flex-grow: 1;
+        text-align: center;
+        line-height: 15rem;
+        background: rgba(0, 0, 0, 0.05);
+        cursor: pointer;
+      }
+      span.active {
+        color: $brand-primary;
+        background: transparent;
+      }
+    }
+  }
+}

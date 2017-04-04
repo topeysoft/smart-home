@@ -1,0 +1,24 @@
+@import '../../../../../styles/current-theme.scss';
+
+
+onboarding-device-capabilities{
+ui-list {
+  list-item {
+      padding: .5rem 0;
+      display: flex;
+    item-title {
+      display: block;
+      font-size: 2rem;
+    }
+    item-detail {
+      border-bottom: .1rem solid $border-color-default;
+    }
+    &:active{
+        background: $action-active-bg-primary;
+    }
+    .item-icon{
+      width:6rem;
+    }
+  }
+}
+}

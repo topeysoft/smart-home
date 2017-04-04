@@ -1,0 +1,25 @@
+<div class="text-center d-flex flex-column">
+  <color-wheel (selectedColorChange)="setColorValues($event)" [selectedColor]="colorPreview"></color-wheel>
+
+  <ion-item class="color-red">
+    RED
+    <ion-range (ionChange)="colorChangeHandler()" [(ngModel)]="rgbModel.red" [min]="pwmValueRange.min" [max]="pwmValueRange.max">
+      <ion-icon range-left small><i class="ion-ios-sunny"></i></ion-icon>
+      <ion-icon range-right><i class="ion-ios-sunny"></i></ion-icon>
+    </ion-range>
+  </ion-item>
+  <ion-item class="color-green">
+    GREEN
+    <ion-range (ionChange)="colorChangeHandler()" [(ngModel)]="rgbModel.green" [min]="pwmValueRange.min" [max]="pwmValueRange.max">
+      <ion-icon range-left small><i class="ion-ios-sunny"></i></ion-icon>
+      <ion-icon range-right><i class="ion-ios-sunny"></i></ion-icon>
+    </ion-range>
+  </ion-item>
+  <ion-item class="color-blue">
+    BLUE
+    <ion-range (ionChange)="colorChangeHandler()" [(ngModel)]="rgbModel.blue" [min]="pwmValueRange.min" [max]="pwmValueRange.max">
+      <ion-icon range-left small><i class="ion-ios-sunny"></i></ion-icon>
+      <ion-icon range-right><i class="ion-ios-sunny"></i></ion-icon>
+    </ion-range>
+  </ion-item>
+</div>

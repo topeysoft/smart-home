@@ -1,0 +1,20 @@
+loader-inset{
+    .loading-container{
+        height: auto;
+        width: auto;
+        margin: auto;
+        padding: 0;
+        position: relative;
+        top:auto;
+        left:auto;
+        display: flex;
+        flex-direction: column;
+        .loader-wrapper{
+            margin-top: 3rem;
+        }
+        .display-text{
+            font-weight: 300;
+            font-size: 1.4rem;
+        }
+    }
+}

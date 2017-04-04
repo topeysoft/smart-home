@@ -1,0 +1,17 @@
+@import '../../../../../styles/current-theme.scss';
+onboarding-search-result {
+  ui-list {
+    list-item {
+      padding: .5rem 0;
+      display: flex;
+      border-bottom: .2rem solid $border-color-primary;
+      item-title {
+        display: block;
+        font-size: 2rem;
+      }
+      &:active {
+        background: $action-active-bg-primary;
+      }
+    }
+  }
+}

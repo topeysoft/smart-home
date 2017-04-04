@@ -1,0 +1,11 @@
+@import '../../../styles/current-theme.scss';
+
+:host{
+    display: block;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100vw;
+    padding-top: map-get($sizes, action-bar-height );
+    padding-bottom: map-get($sizes, tab-bar-height );
+}

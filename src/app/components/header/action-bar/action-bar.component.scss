@@ -1,0 +1,34 @@
+@import '../../../../styles/current-theme.scss';
+
+ts-action-bar{
+    display: flex;
+    position: relative;
+    background: map-get($colors,background );
+    top:0;
+    left: 0;
+    width: 100vw;
+    height: map-get($sizes, action-bar-height );
+    line-height: map-get($sizes, action-bar-height );
+    @if(map-get($layout-config, show-action-bar-border)==true){
+        border-bottom: .1rem solid transparentize(map-get($colors, foreground), .9); 
+   }
+   &.hide-border{
+            border-bottom: none;    
+       }
+   .title{
+       color: map-get($colors, foreground);
+       font-size: 1rem;
+       margin-left: 3.5rem;
+       margin-right: 3.5rem;
+       
+   }
+   
+   .menu-btn{
+       position: absolute;
+       left:0;
+       top:0;
+       color: map-get($colors, foreground);
+       padding:  0rem 1rem;
+       font-size: 2rem;
+   }
+}

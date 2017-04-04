@@ -1,0 +1,30 @@
+<page-root>
+  <page-content>
+    <!--<page-title>Search result</page-title>-->
+    <div class="p-5 text-center" *ngIf="!newDevices||newDevices.length<1 && !isLoading">
+      <p class="text-thin">
+        Connect to your device Wi-Fi AP. If the AP is named TPSoft-123456abcdef, the password is 123456abcdef.
+      </p>
+     <loader-inset text="waiting..." displayText="<small>Waiting for connection to new device WiFi</small>"> </loader-inset>
+    </div>
+    <ui-list *ngIf="newDevices&&newDevices.length>0 && !isLoading">
+      <list-item (click)="deviceClick(device)" *ngFor="let device of newDevices" class="d-flex flex-row ">
+         <div class="align-middle d-flex m-2">
+            <span class="display-3 text-muted"><i class="ion-wifi"></i>
+          </span>
+        </div>
+        <div class="flex-grow p-2">
+          <item-title>{{device.name}}</item-title>
+          <div>
+            <span class="text-muted">Signal Strength</span>
+            <span [class.text-success]="device.strength>50" 
+              [class.text-warning]="device.strength<=50 && device.strength>30" 
+              [class.text-danger]="device.strength<=30"
+              class="text-success">{{device.strength}}%</span>
+          </div>
+        </div>
+       
+      </list-item>
+    </ui-list>
+  </page-content>
+</page-root>

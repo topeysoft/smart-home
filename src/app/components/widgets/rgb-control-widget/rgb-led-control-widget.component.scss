@@ -1,0 +1,82 @@
+    $red:red;
+    $green:green;
+    $blue:blue;
+    rgb-led-control {
+      &.animate-slider {
+        * {
+          transition: all .2s linear;
+        }
+      }
+      ion-item,
+      .item-md,
+      .item-ios,
+      .item-wp,
+      .item-md.item-block,
+      .item-ios.item-block,
+      .item-wp.item-block {
+        background: transparent;
+        padding: 0;
+        border: none;
+        .item-inner {
+          background: transparent;
+          border: none;
+          border-top: .01rem solid $border-color-default;
+        }
+        .item-ios {
+          border: none;
+        }
+      }
+      .color-red {
+        .range-md,
+        .range-ios,
+        .range-wp {
+          .range-bar-active {
+            background: $red;
+            .range-knob {
+              background: $red;
+            }
+          }
+          .range-knob {
+            background: $red;
+          }
+        }
+        color:$red;
+      }
+      .color-green {
+        .range-md,
+        .range-ios,
+        .range-wp {
+          .range-bar-active {
+            background: $green;
+            .range-knob {
+              background: $green;
+            }
+          }
+          .range-knob {
+            background: $green;
+          }
+        }
+        color: $green;
+      }
+      .color-blue {
+        .range-md,
+        .range-ios,
+        .range-wp {
+          .range-bar-active {
+            background: $blue;
+            .range-knob {
+              background: $blue;
+            }
+          }
+          .range-knob {
+            background: $blue;
+          }
+        }
+        color: $blue;
+      }
+      color-preview {
+        padding: 2rem;
+        display: block;
+        border: .01rem solid $action-active-bg-primary;
+      }
+    }

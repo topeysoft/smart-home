@@ -1,0 +1,6 @@
+<label>
+    <input (change)="onChangeHandler($event)" [(ngModel)]="value" class="m-1" type="checkbox" /> 
+    <span *ngIf="!checked" class="p-1" [innerHTML]="uncheckedDisplay"></span>
+    <span *ngIf="checked" class="p-1"  [innerHTML]="checkedDisplay"></span>
+    <span>{{label}}</span>
+            </label>

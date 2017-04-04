@@ -1,0 +1,131 @@
+@import '../../../../styles/current-theme.scss';
+$foreground:map-get($colors, foreground);
+:host {
+  position: relative;
+  display: block;
+  border-bottom: 1px solid transparentize($foreground, .8);
+  margin-bottom: -.15rem;
+  &.focused {
+    .icon-left,
+    .icon-right {
+      color: $brand-primary !important;
+    }
+  }
+  input:-webkit-autofill { -webkit-box-shadow:0 0 0 500px white inset; }
+  select {
+    position: relative;
+    // left:0;
+    // top: 0;
+    // height: 0;
+    // height: 100%;
+    // width: 100%;
+    border: none;
+    background: transparent;
+   -webkit-appearance: none; 
+   -moz-appearance: none;
+   appearance: none;       /* remove default arrow */
+   background-image: url(...);   /* add custom arrow */
+}
+datalist{
+    left:0;
+    top:100%;
+}
+}
+
+:host label {
+  padding: .2em .5rem;
+  margin: 0;
+  display: flex;
+  flex-flow: column;
+  position: static;
+  height: 3.5rem;
+}
+
+// :host.border-shown label,
+// :host.focused label
+// {
+//     border: .1rem solid #eeeeee;  
+// }
+:host label::after {
+  content: '';
+  background: $brand-primary;
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  bottom: -0rem;
+  left: 0;
+  -webkit-transition: width .5s ease-out;
+  -moz-transition: width .5s ease-out;
+  -ms-transition: width .5s ease-out;
+  -o-transition: width .5s ease-out;
+  transition: width .5s ease-out;
+}
+
+:host.focused label::after {
+  width: 100%;
+}
+
+:host input {
+  border: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  width: 100%;
+  padding-left: 2.2rem;
+  padding-right: 2.2rem;
+  background: transparent;
+  color: $foreground;
+  flex-grow: 1;
+  font-size: 1.8rem;
+  -webkit-transition: width .5s ease-out;
+  -moz-transition: width .5s ease-out;
+  -ms-transition: width .5s ease-out;
+  -o-transition: width .5s ease-out;
+  transition: width .5s ease-out;
+  outline: none;
+}
+
+:host.empty input {
+  font-size: 1.2rem;
+}
+
+:host input:focus {
+  border: none;
+  outline: none;
+}
+
+:host #label {
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-size: .7rem;
+  text-transform: uppercase;
+}
+
+:host .list-group,
+:host .list-group li:first-child {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+
+:host .list-group {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  z-index: 200000;
+  box-sizing: border-box;
+  -webkit-box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 0 3px 0 rgba(0, 0, 0, .2);
+}
+
+:host .list-group li {
+  width: 100%;
+  cursor: pointer;
+}
+
+:host .list-group .list-group-item:hover {
+  background: lighten($brand-primary, 20);
+}

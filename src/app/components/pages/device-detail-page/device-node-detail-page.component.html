@@ -1,0 +1,11 @@
+<div *ngIf="nodeData.controlType" [ngSwitch]="nodeData.controlType">
+    <rgb-led-control *ngSwitchCase="'rgb-led'" [nodeData]="nodeData"></rgb-led-control>
+    <rgb-led-control *ngSwitchCase="'rgbled'" [nodeData]="nodeData"></rgb-led-control>
+    <rgb-led-control *ngSwitchCase="'rgb-led-light'" [nodeData]="nodeData"></rgb-led-control>
+    <generic-control-widget *ngSwitchCase="'led-light-bulb'" [nodeData]="nodeData"></generic-control-widget>
+    <generic-control-widget *ngSwitchCase="'light-bulb'" [nodeData]="nodeData"></generic-control-widget>
+    <generic-control-widget *ngSwitchCase="'lightbulb'" [nodeData]="nodeData"></generic-control-widget>
+    <generic-control-widget *ngSwitchCase="'dimmable-light'" [nodeData]="nodeData"></generic-control-widget>
+    <generic-control-widget *ngSwitchCase="'dimmable'" [nodeData]="nodeData"></generic-control-widget>
+    <generic-control-widget *ngSwitchDefault [nodeData]="nodeData"></generic-control-widget>
+</div>

@@ -1,0 +1,29 @@
+<!--<div class="m-4">
+</div>-->
+<page-root>
+  <page-content class="m-4 animated"  [class.shake]="invalidSsid&&animateInvalid" >
+    <div class="mb-4">
+      <ui-dropdown  [invalid]="invalidSsid"  *ngIf="!manualEntry" type="text" icon="ion-wifi" (selectedItemChange)="wifiSelected($event)" [items]="wifiList" optionField="ssid" selectedItemIndex="1" label="WiFi Name (SSID)"
+        placeholder="Select WiFi name (SSID)"></ui-dropdown>
+      <ui-input  [invalid]="isDirty&&(!wifiSsid||wifiSsid.length<1)" *ngIf="manualEntry" type="text" icon="ion-wifi" [(value)]="wifiSsid" label="WiFi Name (SSID)"
+        placeholder="Select WiFi name (SSID)"></ui-input>
+      <!--<ui-dd-input type="text" autocomplete="nope" [items]="wifiList" optionField="name" selectedItemIndex="1" label="WiFi Name (SSID)" placeholder="Select or enter WiFi name (SSID)"></ui-dd-input>-->
+      <div class="mt-1">
+         <ui-checkbox [class.text-muted]="!manualEntry" [(checked)]="manualEntry"  label="Enter manually (**Not recomended)"></ui-checkbox>
+      </div>
+    </div>
+
+    <div class="mb-4">
+      <ui-input  [type]="passwordType" [(value)]="wifiPassword" [icon]="passwordIcon"  autocomplete="nope" label="WiFi Password"
+        placeholder="Enter wifi password"></ui-input>
+         <div class="mt-1">
+         <ui-checkbox [class.text-muted]="!showPassword" [(checked)]="showPassword" (checkedChange)="toggleShowPassword($event)" label="{{!showPassword?'Show':'Hide'}} password"></ui-checkbox>
+         <p class="text-muted">Leave blank if it's open network</p>
+      </div>
+    </div>
+  </page-content>
+
+  <page-footer>
+    <button class="m-1 mt-2 btn btn-primary btn-lg btn-block" (click)="continueButtonClick()">Name and group setup</button>
+  </page-footer>
+</page-root>

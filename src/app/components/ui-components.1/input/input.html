@@ -1,0 +1,14 @@
+<label class="wrapper">
+    <span id="label" class="animated fadeInUp text-muted" *ngIf="showLabel" [innerText]="label" ></span>
+  <div class="d-flex">
+        <i class="ion-ios-locked pr-3 h3 icon-left text-muted"></i>
+      <input #input 
+    class="field-value text-truncate" (focus)="setFocus(true);" 
+    (blur)="setFocus(false);" [value]="value" 
+    [placeholder]="placeholder"   
+    (input)="onValueChange($event)" 
+    [type]="type" />
+    <i class="ion-ios-checkmark-empty pl-3 h4 icon-right text-muted"></i>
+    </div>
+
+</label>
