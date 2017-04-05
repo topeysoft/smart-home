@@ -4,4 +4,4 @@ This app provides user interface for home automation (Currently only support Hom
 ##Features include
 - Supports MQTT
 - Supports on-boarding of new devices
-- Besutiful user interface
+- Beautiful user interface
