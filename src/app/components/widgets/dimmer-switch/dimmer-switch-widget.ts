@@ -1,9 +1,9 @@
 import { Component, ElementRef, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 @Component({
-    selector: 'generic-control-widget',
-    templateUrl: './generic-control-widget.html'
-}) export class GenericControlWidgetComponent {
+    selector: 'dimmer-switch-widget',
+    templateUrl: './dimmer-switch-widget.html'
+}) export class DimmerSwitchWidgetComponent {
 
     @Input() color:string = '#76b5ff';
     constructor(private _host: ElementRef) {

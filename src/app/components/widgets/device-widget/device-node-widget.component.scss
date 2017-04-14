@@ -1,25 +1,49 @@
 widget-parent {
-    display: block;
+  display: block;
+  position: relative;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  font-weight: normal;
+  &:active {
+    background: $action-active-bg-primary;
+  }
+  widget-icon {
+    padding: 1rem;
+    // margin-right: .5rem;
+    width: 7rem;
     position: relative;
-    margin-bottom: 1rem;
-    cursor:pointer;
+    display: block;
+    &:active {
+      background: $action-active-bg-primary;
+    }
+  }
+  widget-content {
+    padding: 1rem;
+    widget-title {
+      font-size: 1.6rem;
+    }
+  }
+}
+
+.ts-dark-theme {
+  widget-parent {
+    border: .1rem solid transparentize(lighten(map-get($colors, dark-theme-bg), 5), .1);
     border: .1rem solid transparentize(lighten(map-get($colors, background), 5), .1);
     background: transparentize(lighten(map-get($colors, background), 2), .15);
-    -webkit-box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3);
-    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.3);
-    font-weight: normal;
-     &:active {
-        background: $action-active-bg-primary;
-      }
+    -webkit-box-shadow: 0 0 .3rem 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 .3rem 0 rgba(0, 0, 0, 0.3);
+   
+    &:active {
+      background: $action-active-bg-primary;
+    }
     widget-icon {
-      padding: 1rem;
-      // margin-right: .5rem;
-      width: 7rem;
-      position: relative;
-      display: block;
-       &:active {
+      color: $gray-light;
+      &:active {
         background: $action-active-bg-primary;
       }
+    }
+   .description{
+      color: $gray-light;
     }
     widget-content {
       padding: 1rem;
@@ -27,5 +51,36 @@ widget-parent {
         font-size: 1.6rem;
       }
     }
-  
   }
+}
+
+.ts-light-theme {
+  widget-parent {
+    border: .1rem solid transparentize(darken(map-get($colors, light-theme-bg), 15), .1);
+     background: lighten(map-get($colors, light-theme-bg), 100);
+    -webkit-box-shadow: 0 0 .3rem 0 rgba(0, 0, 0, 0.04);
+    box-shadow: 0 0 .3rem 0 rgba(0, 0, 0, 0.04);
+    // @extend .card;
+    color: $teal;
+    &:active {
+      color: #ffffff;
+      background:  darken($teal, 40);
+    }
+    widget-icon {
+      color:$teal;
+      &:active {
+        color: #ffffff;
+        background: lighten($teal, 20);
+      }
+    }
+    .description{
+      color:$gray-light;
+    }
+    widget-content {
+      padding: 1rem;
+      widget-title {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

@@ -1,15 +1,16 @@
   <div class="p-4"><span class="text-muted">STATUS:</span><span class="text-primary">{{isOff?'OFF':'ON'}}</span></div>
 <div id="switch" >
+  <div id="outlet" [class.active]="!isOff">
+    <span class="holes ground">&nbsp;</span>
+    <span class="holes live">&nbsp;</span>
+    <span class="holes neutral">&nbsp;</span>
+      <span class="on-indicator">&nbsp;</span>
+  </div>
   <div id="wrapper" [class.off]="isOff">
     <div class="switch-face d-flex flex-column" [class.active]="!isOff" (click)="isOff=false">
       <span>ON</span>
-      <span class="on-indicator">&nbsp;</span>
     </div>
     <div  class="switch-face" [class.active]="isOff" (click)="isOff=true">OFF</div>
   </div>
-  <div id="slider" [class.disabled]="isOff">
-    <div class="range-indicator" [style.height]="level+'%'" [style.background]="color"></div>
-    <input min="0" max="100" [(ngModel)]="level" type="range" class="range"  />
-      <!--<span class="knob">=</span>-->
-  </div>
+
 </div>

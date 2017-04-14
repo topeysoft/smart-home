@@ -1,0 +1,41 @@
+@import '../../../../styles/current-theme.scss';
+.ts-dark-theme {
+  ts-left-menu {
+    color: map-get($colors, dark-theme-fg);
+    .wrapper {
+      background: map-get($colors, dark-theme-bg);
+    }
+    #overlay {
+      background: rgba(0, 0, 0, 0.1);
+    }
+    &.show {
+      #overlay {
+        left: 0;
+      }
+    }
+    menu-list {
+      menu-item {
+        menu-icon {
+          font-size: 2.5rem;
+        }
+        &.with-border {
+          border-bottom: .1rem solid darken(map-get($colors, primary), 20);
+        }
+        &:active {
+          background: $action-active-bg-primary;
+        }
+      }
+    }
+  }
+  // &.lg {
+  //   ts-left-menu {
+  //     &.show {
+  //       -webkit-box-shadow: 0 0 .2rem 0 rgba(0, 0, 0, .05) !important;
+  //       box-shadow: 0 0 .2rem 0 rgba(0, 0, 0, .05) !important;
+  //       #overlay {
+  //         left: 0;
+  //       }
+  //     }
+  //   }
+  // }
+}

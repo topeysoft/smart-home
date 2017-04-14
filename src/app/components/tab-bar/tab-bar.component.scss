@@ -4,7 +4,6 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100vw;
   background: map-get($colors, background);
   height: map-get($sizes, tab-bar-height);
   @if(map-get($layout-config, show-tab-bar-border)==true) {

@@ -12,14 +12,14 @@ export class MQTTService {
     onSubscribed = new EventEmitter<any>();
     onMessageReceived = new EventEmitter<any>();
 
-    private static MqtSvc:MQTTService;
+    private static MqtSvc: MQTTService;
     private client: Mqtt.Client | any;
     private mqttConfig: any = {};
     constructor(private configSvc: ConfigService) {
         this.mqttConfig = this.configSvc.Get('mqtt_config');
-        MQTTService.config=this.mqttConfig;
-        MQTTService.MqtSvc=this;
-      setTimeout(()=> {this.initialize()}, 1000);
+        MQTTService.config = this.mqttConfig;
+        MQTTService.MqtSvc = this;
+        setTimeout(() => { this.initialize() }, 1000);
     }
 
     private initialize() {
@@ -30,7 +30,7 @@ export class MQTTService {
     }
 
     private static config;
-
+    isConnected: boolean = false;
     private connect() {
         if (!this.client || !this.client.connected) {
             var options: Mqtt.ClientOptions | any = {};
@@ -98,27 +98,29 @@ export class MQTTService {
 
 
     publish(topic: string, message: any, options?: Mqtt.ClientPublishOptions) {
-        //var buffer = new Buffer(message);
-        var message = new Paho.MQTT.Message(message);
-        message.destinationName = topic;
-        this.client.send(message);
+        if ( MQTTService.MqtSvc.isConnected) {  //var buffer = new Buffer(message);
+            var message = new Paho.MQTT.Message(message);
+            message.destinationName = topic;
+             MQTTService.MqtSvc.client.send(message);
+        }
     }
 
     subscribe(topic, options?) {
-        this.client.subscribe(topic);
+         MQTTService.MqtSvc.client.subscribe(topic);
     }
 
 
     onConnect(e) {
         // Once a connection has been made, make a subscription and send a message.
-        var config:any = MQTTService.config;
+        var config: any = MQTTService.config;
         console.log('MQTT client connected');
+         MQTTService.MqtSvc.isConnected = true;
         var pubTopic = `${config.base_topics.apps}${config.app_client_id}/$stats/$online`
         var appSubTopic = `${config.base_topics.apps}#`;
         var deviceSubTopic = `${config.base_topics.devices}#`;
         MQTTService.MqtSvc.subscribe(deviceSubTopic);
         MQTTService.MqtSvc.subscribe(appSubTopic);
-        
+
         MQTTService.MqtSvc.publish(pubTopic, "I'm connected");
         MQTTService.MqtSvc.onConnected.emit(e);
     }
@@ -126,13 +128,14 @@ export class MQTTService {
     // called when the client loses its connection
     onConnectionLost(responseObject) {
         if (responseObject.errorCode !== 0) {
+             MQTTService.MqtSvc.isConnected = false;
             console.log("onConnectionLost:" + responseObject.errorMessage);
         }
     }
 
     // called when a message arrives
-    onMessageArrived( message) {
-      //  console.log("onMessageArrived topic:",message.destinationName);
-       // console.log("onMessageArrived:" , message.payloadString);
+    onMessageArrived(message) {
+        //  console.log("onMessageArrived topic:",message.destinationName);
+        // console.log("onMessageArrived:" , message.payloadString);
     }
 }

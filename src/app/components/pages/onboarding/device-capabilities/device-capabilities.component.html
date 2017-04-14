@@ -1,5 +1,6 @@
 <page-root>
   <page-content>
+  <page-content-wrapper>
     <ui-list >
       <list-item *ngFor="let node of homieDeviceInfo.nodes" class="d-flex flex-row ">
         <div class="align-middle d-flex m-2 pl-3 pr-3 item-icon">
@@ -29,6 +30,7 @@
 
       </list-item>
     </ui-list>
+    </page-content-wrapper>
   </page-content>
   <page-footer>
     <button class="m-1 mt-2 btn btn-primary btn-lg btn-block" (click)="continueButtonClick()">WiFi Setup</button>

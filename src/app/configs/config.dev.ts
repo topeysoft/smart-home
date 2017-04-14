@@ -16,7 +16,8 @@ export const devConfig = [
     },
     {
         key:'homie_device_setup_base_url',
-        value:'http://192.168.123.1/'
+        value:'http://homie.config/'
+        //value:'http://192.168.123.1/'
     },
     {
         key:'device_management_api_base_url',

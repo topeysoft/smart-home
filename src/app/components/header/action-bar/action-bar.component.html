@@ -1,4 +1,6 @@
-<span (click)="menuClick()" class="menu-btn left-menu-toggle">
+<div class="action-wrapper" [class.show-border]="showBorder">
+  <span (click)="menuClick()" class="menu-btn left-menu-toggle">
     <i class="{{navigator.currentPage.menuButtonAction.icon}}"></i>
 </span>
-<span class="text-uppercase title flex-grow text-center">{{navigator.currentPage.title}}</span>
+  <span class="text-uppercase title flex-grow text-center">{{navigator.currentPage.title}}</span>
+</div>

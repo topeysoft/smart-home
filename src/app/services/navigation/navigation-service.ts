@@ -1,9 +1,12 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Loading, LoadingController, App, MenuController, NavController } from 'ionic-angular';
+import { ResponsiveService } from '../responsive/responsive.service';
 @Injectable()
 export class TsNavigationService {
     navCtrl: NavController;
     showLeftMenu: boolean = true;
+    showHeaderBorder: boolean = true;
+    currentTheme: string = 'ts-dark-theme';
     private history: TsNavigationHistory[] = [];
     private loading: Loading;
     onNavigationEnd = new EventEmitter<any>();
@@ -12,7 +15,7 @@ export class TsNavigationService {
     readonly defaultMenuActions: MenuActions = new MenuActions();
     currentPage: TsNavigationHistory = new TsNavigationHistory();
     leftMenuItems: Array<{ title: string, icon: string, action: any }> = [];
-    constructor(private menuCtrl: MenuController, private loadingCtrl: LoadingController, public appCtrl: App) {
+    constructor(private menuCtrl: MenuController, private respSvc:ResponsiveService, private loadingCtrl: LoadingController, public appCtrl: App) {
         //constructor(private _location: Location, private router: Router, private route: ActivatedRoute) {
         // this.router.events.subscribe((data) => {
         //     if (data instanceof NavigationEnd) {
@@ -37,6 +40,10 @@ export class TsNavigationService {
         this.defaultMenuActions.home.action = () => { this.home() };
     }
 
+    setCurrentTheme(themeName){
+        this.currentTheme = themeName;
+        this.respSvc.referesh();
+    }
     dismissLoading(){
         if(this.loading){
              this.loading.dismiss();

@@ -1,6 +1,6 @@
 import { HostBinding, Component, trigger, state, style, transition, animate } from '@angular/core';
 import { TransitionParams, TransitionService } from '../../../../services/transition.service';
-import { TsNavigationService } from '../../../../services/navigation-service/navigation-service';
+import { TsNavigationService } from '../../../../services/navigation/navigation-service';
 import { PageBase } from '../../page-base';
 import { routerTransition } from '../../../../utilities/router-animations';
 import { DeviceOnboardingService } from '../../../../services/onboarding/onboarding.service';

@@ -1,39 +1,46 @@
 page-root {
   display: flex;
-  position: fixed;
+  position: relative;
   left: 0;
-  height: 100vh;
-  width: 100vw;
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding-bottom: map-get($sizes, header-height);
+  overflow: hidden;
   flex-direction: column;
   page-content {
     flex-grow: 1;
-    padding:0 1rem;
+    padding: 0 1rem;
+    width: 100%;
+    // height: 100vh;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    page-content-wrapper {
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 100%;
+    }
+    flex-grow: 1;
+    // top: map-get($sizes, header-height);
+    // padding-bottom: map-get($sizes, header-height);
   }
-  page-title{
-    display:block;
-    font-size:2rem;
+  page-title {
+    display: block;
+    font-size: 2rem;
     color: map-get($colors, primary);
   }
   page-footer {
     position: relative;
-    
     bottom: 0;
     left: 0;
-    width: 100vw;
     background: map-get($colors, background);
     height: map-get($sizes, footer-height);
     @if(map-get($layout-config, show-footer-border)==true) {
       border-top: .1rem solid transparentize(map-get($colors, foreground), .95);
     }
-    &.fixed{
+    &.fixed {
       position: fixed;
     }
   }
 }
 
-.flex-grow{
+.flex-grow {
   flex-grow: 1;
 }

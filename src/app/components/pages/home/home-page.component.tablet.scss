@@ -1,0 +1,89 @@
+@import '../../../../styles/current-theme.scss';
+.lg home-page {
+  widget-wrapper {
+    position: relative;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    /* Safari 6.1+ */
+    flex-direction: row;
+    widget-list {
+      position: relative;
+      flex-grow: 1;
+      display: block;
+      width: auto;
+      device-wrapper {
+        //  display: -webkit-flex; /* Safari */
+        // -webkit-flex-wrap: wrap; /* Safari 6.1+ */
+        display: block;
+        // flex-wrap: wrap;
+        // flex-direction: column;
+        node-wrapper {
+          width: 50%;
+          min-width: 25rem;
+          float: left;
+          position: relative;
+          box-sizing: border-box;
+          padding-right: 1rem;
+          device-node-widget {
+            position: relative;
+            width: 100%;
+            display: block;
+           
+          }
+        }
+      }
+    }
+    widget-detail {
+      width: 50%;
+      min-width: 35rem;
+    }
+    &.showing-detail {
+      widget-list {
+        device-wrapper {
+          display: -webkit-flex;
+          /* Safari */
+          -webkit-flex-wrap: wrap;
+          /* Safari 6.1+ */
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: column;
+          node-wrapper {
+            width: 100%;
+            float: none;
+          }
+        }
+      }
+    }
+  }
+}
+ .lg.ts-light-theme home-page{
+    widget-wrapper {
+    widget-list {
+      device-wrapper {
+        node-wrapper {
+          device-node-widget {
+            &.active {
+              border-right: .3rem solid $teal;
+            }
+          }
+        }
+      }
+    }
+  }
+  }
+  .lg.ts-dark-theme home-page{
+    widget-wrapper {
+    widget-list {
+      device-wrapper {
+        node-wrapper {
+          device-node-widget {
+             &.active {
+              border-right: .3rem solid map-get($colors, primary);
+            }
+          }
+        }
+      }
+    }
+  }
+  }

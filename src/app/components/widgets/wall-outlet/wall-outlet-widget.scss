@@ -1,0 +1,203 @@
+    $active-switch-text-color:lighten($brand-primary, 15);
+    wall-outlet-widget {
+      display: flex;
+      text-align: center;
+      flex-direction: column;
+      max-width: 25rem;
+      margin: auto;
+      #switch {
+        display: flex;
+        text-align: center;
+        flex-direction: row;
+        position: relative;
+        padding: 2rem;
+        #outlet {
+          width: 20rem;
+          height: 20rem;
+          border: .2rem solid rgba(0, 0, 0, 0.15);
+          border-radius: 2rem;
+          margin: auto;
+          margin-right: 1rem;
+          position: relative;
+          .on-indicator{
+            position: absolute;
+            left:50%;
+            bottom: 2rem;
+            height: .5rem;
+            width: 4rem;
+            margin-left:-2rem; 
+            background: $gray-light;
+          }
+          .holes {
+            position: absolute;
+            width: 2rem;
+            background: lighten($gray-light, 30);
+            -webkit-box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, .4);
+            box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, .4);
+            &.ground {
+              bottom: 8rem;
+              height: 2rem;
+              left: 50%;
+              margin-left: -1rem;
+              border-top-right-radius: .5rem;
+              border-top-left-radius: .5rem;
+            }
+            &.live,
+            &.neutral {
+              width: .6rem;
+              bottom: 11.5rem;
+              height: 2.4rem;
+            }
+            &.neutral {
+              right: 4.5rem;
+              left: auto;
+            }
+            &.live {
+              left: 4.5rem;
+              right: auto;
+            }
+          }
+          &.active {
+             .on-indicator {
+              background: $active-switch-text-color;
+              -webkit-box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, .4);
+              box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, .4);
+            }
+          }
+        }
+        #wrapper {
+          width: 5rem;
+          height: 15rem;
+          background: $action-active-bg-primary;
+          font-size: 1.6rem;
+          margin: auto;
+          margin-right: .5rem;
+          display: flex;
+          flex-direction: column;
+          -webkit-box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.3);
+          &:active {
+            background: $action-active-bg-primary;
+          }
+          &.off {
+            -webkit-box-shadow: 1px -4px 5px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 1px -4px 5px 0 rgba(0, 0, 0, 0.3);
+          }
+          .switch-face {
+            color: $gray-light;
+            flex-grow: 1;
+            text-align: center;
+            line-height: 5;
+            cursor: pointer;
+            background: transparent;
+            position: relative;
+            .on-indicator {
+              width: 2rem;
+              height: .7rem;
+              top: 60%;
+              left: 50%;
+              margin: auto;
+              margin-left: -1rem;
+              background: $gray-light;
+              position: absolute;
+            }
+            &.active {
+              .on-indicator {
+                background: $active-switch-text-color;
+              }
+              color: $active-switch-text-color;
+              background: rgba(0, 0, 0, 0.08);
+            }
+          }
+        }
+      }
+    }
+    
+    .ts-dark-theme {
+      wall-outlet-widget {
+        #switch {
+          #outlet {
+            background: $action-active-bg-primary;
+            -webkit-box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.3);
+            .holes {
+              background: darken($action-active-bg-primary, 5);
+            }
+            &.active {
+               .on-indicator {
+                background: $active-switch-text-color;
+                -webkit-box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, .4);
+                box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, .4);
+              }
+            }
+          }
+          #wrapper {
+            background: $action-active-bg-primary;
+            -webkit-box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 1px 4px 5px 0 rgba(0, 0, 0, 0.3);
+            &:active {
+              background: $action-active-bg-primary;
+            }
+            &.off {
+              -webkit-box-shadow: 1px -4px 5px 0 rgba(0, 0, 0, 0.3);
+              box-shadow: 1px -4px 5px 0 rgba(0, 0, 0, 0.3);
+            }
+            .switch-face {
+              color: $gray-light;
+              background: transparent;
+              &.active {
+                color: $active-switch-text-color;
+                background: rgba(0, 0, 0, 0.08);
+              }
+            }
+          }
+        }
+      }
+    }
+    
+    .ts-light-theme {
+      wall-outlet-widget {
+        #switch {
+          border-radius: .5em;
+          border: .2rem solid rgba(0, 0, 0, 0.15);
+          -webkit-box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.1);
+          box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.1);
+          background: lighten(map-get($colors, light-theme-bg), 100);
+          #outlet {
+            border: .2rem solid rgba(0, 0, 0, 0.15);
+            .holes {
+              background: lighten($gray-light, 30);
+            }
+            &.active {
+              .on-indicator {
+                background: $active-switch-text-color;
+                -webkit-box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, .4);
+                box-shadow: inset 0 0 4px 0 rgba(0, 0, 0, .4);
+              }
+            }
+          }
+          #wrapper {
+            border-radius: .2em;
+            border: .1rem solid rgba(0, 0, 0, 0.15);
+            background: lighten(map-get($colors, light-theme-bg), 100);
+            -webkit-box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 1px 4px 6px 0 rgba(0, 0, 0, 0.3);
+            &:active {
+              background: lighten(map-get($colors, light-theme-bg), 100);
+            }
+            &.off {
+              -webkit-box-shadow: 1px -4px 6px 0 rgba(0, 0, 0, 0.3);
+              box-shadow: 1px -4px 6px 0 rgba(0, 0, 0, 0.3);
+            }
+            .switch-face {
+              color: lighten($gray-light, 45);
+              background: transparent;
+              &.active {
+                color: $active-switch-text-color;
+                background: rgba(0, 0, 0, 0.05);
+              }
+            }
+          }
+        }
+      }
+    }

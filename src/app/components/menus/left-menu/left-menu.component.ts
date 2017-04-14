@@ -1,5 +1,5 @@
 import { Component, HostBinding, ElementRef } from '@angular/core';
-import { TsNavigationService } from '../../../services/navigation-service/navigation-service';
+import { TsNavigationService } from '../../../services/navigation/navigation-service';
 import $ from "jquery";
 
 @Component({

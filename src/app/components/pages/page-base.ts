@@ -1,4 +1,4 @@
-import { TsNavigationService, TsNavigationHistory } from '../../services/navigation-service/navigation-service';
+import { TsNavigationService, TsNavigationHistory } from '../../services/navigation/navigation-service';
 export class PageBase{
     title:string;
     showHeaderBorder:boolean=true;

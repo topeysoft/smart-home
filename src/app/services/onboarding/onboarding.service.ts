@@ -4,7 +4,7 @@ import { Platform } from 'ionic-angular';
 import { WifiInfo } from '../../models/wifi-info';
 import { HomieDeviceApiService } from '../device-api/homie-device-api.service';
 import { HomieDeviceConfig } from '../../models/homie-device-config';
-import { TsNavigationService } from '../navigation-service/navigation-service';
+import { TsNavigationService } from '../navigation/navigation-service';
 import { ConfigService } from '../config.service';
 @Injectable()
 export class DeviceOnboardingService {
@@ -95,7 +95,7 @@ export class DeviceOnboardingService {
                             () => {
 
                                 tryGetHeartBeat();
-                                var e = 'Failed! Retrying';
+                               // var e = 'Failed! Retrying';
                                // reject(e)
                             }
                             )

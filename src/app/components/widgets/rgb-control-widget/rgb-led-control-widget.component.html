@@ -1,25 +1,49 @@
-<div class="text-center d-flex flex-column">
+<div class="text-center d-flex"  [class.flex-column]="respSvc.isXsPortrait" [class.flex-row]="respSvc.isXsLandscape">
   <color-wheel (selectedColorChange)="setColorValues($event)" [selectedColor]="colorPreview"></color-wheel>
+  <div class="text-center">
+    <color-adjustment class="text-center d-flex flex-column">
+      <ion-item class="color-red">
+        RED
+        <ion-range (ionChange)="colorChangeHandler('r', rgbModel.red)" [(ngModel)]="rgbModel.red" [min]="pwmValueRange.min" [max]="pwmValueRange.max">
+          <ion-icon range-left small><i class="ion-ios-sunny"></i></ion-icon>
+          <ion-icon range-right><i class="ion-ios-sunny"></i></ion-icon>
+        </ion-range>
+      </ion-item>
+      <ion-item class="color-green">
+        GREEN
+        <ion-range  (ionChange)="colorChangeHandler('g', rgbModel.green)" [(ngModel)]="rgbModel.green" [min]="pwmValueRange.min"
+          [max]="pwmValueRange.max">
+          <ion-icon range-left small><i class="ion-ios-sunny"></i></ion-icon>
+          <ion-icon range-right><i class="ion-ios-sunny"></i></ion-icon>
+        </ion-range>
+      </ion-item>
+      <ion-item class="color-blue">
+        BLUE
+        <ion-range (ionChange)="colorChangeHandler('b', rgbModel.blue)" [(ngModel)]="rgbModel.blue" [min]="pwmValueRange.min" [max]="pwmValueRange.max">
+          <ion-icon range-left small><i class="ion-ios-sunny"></i></ion-icon>
+          <ion-icon range-right><i class="ion-ios-sunny"></i></ion-icon>
+        </ion-range>
+      </ion-item>
+    </color-adjustment>
+    <div class="pt-3 p-5">
+      <ion-list class="d-flex flex-row">
+        <ion-item class="color-red  d-flex flex-column-reverse">
+          <ion-toggle color="danger" [(ngModel)]="rgbModel.toggles.red"></ion-toggle>
+          <ion-label><small>Red</small></ion-label>
+        </ion-item>
 
-  <ion-item class="color-red">
-    RED
-    <ion-range (ionChange)="colorChangeHandler()" [(ngModel)]="rgbModel.red" [min]="pwmValueRange.min" [max]="pwmValueRange.max">
-      <ion-icon range-left small><i class="ion-ios-sunny"></i></ion-icon>
-      <ion-icon range-right><i class="ion-ios-sunny"></i></ion-icon>
-    </ion-range>
-  </ion-item>
-  <ion-item class="color-green">
-    GREEN
-    <ion-range (ionChange)="colorChangeHandler()" [(ngModel)]="rgbModel.green" [min]="pwmValueRange.min" [max]="pwmValueRange.max">
-      <ion-icon range-left small><i class="ion-ios-sunny"></i></ion-icon>
-      <ion-icon range-right><i class="ion-ios-sunny"></i></ion-icon>
-    </ion-range>
-  </ion-item>
-  <ion-item class="color-blue">
-    BLUE
-    <ion-range (ionChange)="colorChangeHandler()" [(ngModel)]="rgbModel.blue" [min]="pwmValueRange.min" [max]="pwmValueRange.max">
-      <ion-icon range-left small><i class="ion-ios-sunny"></i></ion-icon>
-      <ion-icon range-right><i class="ion-ios-sunny"></i></ion-icon>
-    </ion-range>
-  </ion-item>
+        <ion-item class="color-green  d-flex flex-column-reverse">
+          <ion-toggle color="secondary" [(ngModel)]="rgbModel.toggles.green"></ion-toggle>
+          <ion-label ><small>Green</small></ion-label>
+        </ion-item>
+
+        <ion-item class="color-blue  d-flex flex-column-reverse">
+          <ion-toggle [(ngModel)]="rgbModel.toggles.blue"></ion-toggle>
+          <ion-label  class="p-0" ><small>Blue</small></ion-label>
+        </ion-item>
+
+      </ion-list>
+    </div>
+  </div>
 </div>
+

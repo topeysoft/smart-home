@@ -1,6 +1,6 @@
 import { Component, trigger, state, style, transition, animate } from '@angular/core';
 import { PageBase } from '../../page-base';
-import { TsNavigationService } from '../../../../services/navigation-service/navigation-service';
+import { TsNavigationService } from '../../../../services/navigation/navigation-service';
 @Component({
   selector: 'onboarding-ladging-page',
   templateUrl: './landing-page.component.html'

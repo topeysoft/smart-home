@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TransitionService } from '../../../../services/transition.service';
 import { PageBase } from '../../page-base';
-import { TsNavigationService, MenuButtonIcons } from '../../../../services/navigation-service/navigation-service';
+import { TsNavigationService, MenuButtonIcons } from '../../../../services/navigation/navigation-service';
 import { routerTransition } from '../../../../utilities/router-animations';
 import { HomieDevice, HomieNodeCapability, HomieNode } from '../../../../models/homie-device';
 import { DeviceOnboardingService } from '../../../../services/onboarding/onboarding.service';

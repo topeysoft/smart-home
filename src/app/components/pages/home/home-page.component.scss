@@ -1,5 +1,19 @@
 @import '../../../../styles/current-theme.scss';
 home-page {
   position: relative;
-  
+  device-wrapper{
+    // display: flex;
+      transition:all .2s ease-in-out;
+    // flex-direction: column;
+    node-wrapper{
+      width: 100%;
+      transition:all .2s ease-in-out;
+      device-node-widget{
+        position: relative;
+        width: 100%;
+      transition:all .2s ease-in-out;
+        
+      }
+    }
+  }
 }

@@ -1,34 +1,74 @@
 @import '../../../../styles/current-theme.scss';
-
-ts-action-bar{
+ts-action-bar {
+  display: flex;
+  position: relative;
+  top: 0;
+  left: 0;
+  height: map-get($sizes, action-bar-height);
+  line-height: map-get($sizes, action-bar-height);
+  .action-wrapper {
     display: flex;
+    width: 100%;
     position: relative;
-    background: map-get($colors,background );
-    top:0;
-    left: 0;
-    width: 100vw;
-    height: map-get($sizes, action-bar-height );
-    line-height: map-get($sizes, action-bar-height );
-    @if(map-get($layout-config, show-action-bar-border)==true){
-        border-bottom: .1rem solid transparentize(map-get($colors, foreground), .9); 
-   }
-   &.hide-border{
-            border-bottom: none;    
-       }
-   .title{
-       color: map-get($colors, foreground);
-       font-size: 1rem;
-       margin-left: 3.5rem;
-       margin-right: 3.5rem;
-       
-   }
-   
-   .menu-btn{
-       position: absolute;
-       left:0;
-       top:0;
-       color: map-get($colors, foreground);
-       padding:  0rem 1rem;
-       font-size: 2rem;
-   }
+    margin-bottom: .5rem;
+    border: none;
+    &.show-border {
+      @if(map-get($layout-config, show-action-bar-border)==true) {
+        border-bottom: .1rem solid transparentize(map-get($colors, foreground), .9);
+      }
+    }
+    .title {
+      color: map-get($colors, foreground);
+      font-size: 1rem;
+      margin-left: 3.5rem;
+      margin-right: 3.5rem;
+      text-align: center;
+    }
+    .menu-btn {
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: map-get($colors, foreground);
+      padding: 0rem 1rem;
+      font-size: 2rem;
+    }
+  }
+}
+
+.ts-light-theme {
+  ts-action-bar {
+    .action-wrapper {
+      background: lighten(map-get($colors, light-theme-bg), 100);
+      &.show-border {
+        @if(map-get($layout-config, show-action-bar-border)==true) {
+          border-bottom: .1rem solid transparentize(map-get($colors, light-theme-fg), .9);
+        }
+      }
+      .title {
+        color: map-get($colors, light-theme-fg);
+      }
+      .menu-btn {
+        color: map-get($colors, light-theme-fg);
+      }
+    }
+  }
+}
+
+.ts-dark-theme {
+  ts-action-bar {
+    .action-wrapper {
+      background: map-get($colors, dark-theme-bg);
+      &.show-border {
+        @if(map-get($layout-config, show-action-bar-border)==true) {
+          border-bottom: .1rem solid transparentize(map-get($colors, dark-theme-fg), .9);
+        }
+      }
+      .title {
+        color: map-get($colors, dark-theme-fg);
+      }
+      .menu-btn {
+        color: map-get($colors, dark-theme-fg);
+      }
+    }
+  }
 }

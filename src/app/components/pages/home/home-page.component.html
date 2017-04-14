@@ -1,9 +1,18 @@
 <page-root>
   <page-content>
-    <div *ngFor="let device of devices;">
-      <div *ngFor="let node of device.nodes;">
-        <device-node-widget (widgetClick)="showNodeDetail(node)" (iconClick)="toggleNode(node)" [node]="node"></device-node-widget>
-      </div>
-    </div>
+    <widget-wrapper [class.showing-detail]="deviceMgmtSvc.selectedNode">
+   <widget-list> 
+     <device-wrapper *ngFor="let device of devices;" >
+      <node-wrapper *ngFor="let node of device.nodes;"  >
+        <device-node-widget (widgetClick)="showNodeDetail(device, node)" (iconClick)="toggleNode(device, node)" 
+        [class.active]="node.active"
+        [node]="node"></device-node-widget>
+      </node-wrapper>
+    </device-wrapper>
+   </widget-list>
+   <widget-detail *ngIf="deviceMgmtSvc.selectedNode">
+      <device-node-detail  *ngIf="showDetail"></device-node-detail>
+   </widget-detail>
+    </widget-wrapper>
   </page-content>
 </page-root>

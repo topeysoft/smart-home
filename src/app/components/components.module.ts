@@ -22,6 +22,8 @@ import { RgbLedControlWidgetComponent } from './widgets/rgb-control-widget/rgb-l
 import { DeviceNodeDetailComponent } from './pages/device-detail-page/device-node-detail-page.component';
 import { ColorWheelComponent } from './controls/color-wheel/color-wheel.component';
 import { GenericControlWidgetComponent } from './widgets/generic-control-widget/generic-control-widget';
+import { WallOutletWidgetComponent } from './widgets/wall-outlet/wall-outlet-widget';
+import { DimmerSwitchWidgetComponent } from './widgets/dimmer-switch/dimmer-switch-widget';
 @NgModule({
     declarations: []
     , exports: []
@@ -58,6 +60,8 @@ export const TsComponents = [
     , DeviceNodeWidgetComponent
     , RgbLedControlWidgetComponent
     , GenericControlWidgetComponent
+    , WallOutletWidgetComponent
+    , DimmerSwitchWidgetComponent
 
     , ColorWheelComponent
 ]

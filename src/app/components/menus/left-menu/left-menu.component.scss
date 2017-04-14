@@ -4,16 +4,14 @@ ts-left-menu {
   display: block;
   position: fixed;
   height: 100vh;
-  width: map-get($sizes, left-menu-width);
-  border-right: .2rem solid map-get($colors, primary);
-  color: map-get($colors, foreground);
+  width:  map-get($sizes, left-menu-width);
+  //border-right: .2rem solid map-get($colors, primary);
   left: -100%;
   top: 0;
   z-index: map-get($z-indexes, left-menu);
   transition: left .2s ease-in-out;
   .wrapper {
     position: relative;
-    background: map-get($colors, background);
     display: flex;
     width: 100%;
     height: 100%;
@@ -31,9 +29,7 @@ ts-left-menu {
   }
   &.show {
     left: 0;
-    -webkit-box-shadow: $shadow-depth 0 $shadow-depth 0 rgba(0, 0, 0, .15);
-    box-shadow: $shadow-depth 0 $shadow-depth 0 rgba(0, 0, 0, .15);
-    #overlay {
+        #overlay {
       left: 0;
     }
   }
@@ -51,12 +47,6 @@ ts-left-menu {
       menu-icon {
         padding-right: 1rem;
         font-size: 2.5rem;
-      }
-      &.with-border {
-        border-bottom: .1rem solid darken(map-get($colors, primary), 20);
-      }
-      &:active {
-        background: $action-active-bg-primary;
       }
     }
   }

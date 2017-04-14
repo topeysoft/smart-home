@@ -1,15 +1,16 @@
  <widget-parent  class="d-flex" >
-            <widget-icon (click)="onIconClick()" class="display-2 text-center text-muted" >
+            <widget-icon (click)="onIconClick()" class="display-2 text-center" >
               <i class="{{getIcon()}}"></i>
             </widget-icon>
           <widget-content class="flex-grow" (click)="onWidgetClick()">
             <widget-title class="text-center">{{getDisplayName()}}</widget-title>
-            <div class="text-muted" >
+            <div class="description" >
               {{getDescription()}}
             </div>
-            <div class="text-muted" *ngFor="let capability of node.capabilities; let isLastCapability=last;">
-              {{capability.name}} 
+            <!--<div class="text-muted" *ngFor="let capability of node.capabilities; let isLastCapability=last;">
+              {{capability.displayName}} 
               <span class *ngIf="!isLastCapability">, </span>
-            </div>
+            </div>-->
+            
           </widget-content>
       </widget-parent>

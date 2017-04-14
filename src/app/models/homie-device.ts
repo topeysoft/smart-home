@@ -26,6 +26,16 @@ export class HomieNode {
 export class HomieNodeCapability {
     name: string;
     type: string = "read_write"
+    identifier:string;
+    is_metric:boolean;
+    is_range:boolean;
+    is_settable:boolean;
+    min:number;
+    max:number;
+    value:number;
+    state:any;
+    unit:string;
+    action:{topic?:string}
 }
 
 export const DeviceIconMap = {
@@ -34,6 +44,7 @@ export const DeviceIconMap = {
     'light-bulb': 'ion-ios-lightbulb',
     'led-bulb': 'ion-ios-lightbulb',
     'led-light-bulb': 'ion-ios-lightbulb',
+    'led-light': 'ion-ios-lightbulb',
 
     'rgbled': 'ion-ios-color-filter-outline',
     'rgb-led': 'ion-ios-color-filter-outline',
@@ -41,6 +52,11 @@ export const DeviceIconMap = {
     'rgbww-led': 'ion-ios-color-filter',
     'rgb-led-light': 'ion-ios-color-filter-outline',
     'rgbw-led-light': 'ion-ios-color-filter',
+
+    'outlet': 'ion-outlet',
+    'wall-outlet': 'ion-outlet',
+    'power-outlet': 'ion-outlet',
+
     'temprature': 'ion-ios-snowy',
     'thermometer': 'ion-ios-snowy',
     'default': 'ion-cube',
@@ -57,7 +73,13 @@ export const DeviceTypeMap = {
     'rgbled': 'Multi-color LED light',
     'led-light-bulb': 'LED light bulb',
     'rgb-led-light': 'Multi-color LED light',
+    'rgbw-led': 'Multi-color (+ white) LED light',
     'rgbw-led-light': 'Multi-color (+ white) LED light',
+
+    'outlet': 'Power outlet',
+    'wall-outlet': 'Power outlet',
+    'power-outlet': 'Power outlet',
+
     'temprature': 'Temprature',
     'thermometer': 'Thermometer',
     'default': 'Generic',

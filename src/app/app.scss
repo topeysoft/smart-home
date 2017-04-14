@@ -13,22 +13,38 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 @import '../styles/current-theme.scss';
-ts-theme {
+ts-theme
+// ,ts-theme.xs
+// ,ts-theme.sm
+// ,ts-theme.md
+// ,ts-theme.lg
+// ,ts-theme.xl
+ {
   display: flex;
-  flex-direction: column;
-  &.ts-dark-theme {
-    background: map-get($colors, dark-theme-bg);
-    color: map-get($colors, dark-theme-fg);
-    ts-app {
+  flex-direction: row;
+  ts-app {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    flex-direction: row;
+    // ion-menu {
+    //  top:map-get($sizes , header-height);
+    //  padding-bottom: map-get($sizes , header-height);
+    //   background: map-get($colors, dark-theme-bg);
+    //.menu-inner {
+    // background: map-get($colors, dark-theme-bg);
+    // ts-left-menu {
+    // }
+    ts-body {
       display: flex;
-      height: 100vh;
-      width: 100vw;
-      overflow: hidden;
       flex-direction: column;
+      flex-grow: 1;
+      position: relative;
       ts-header {
         position: relative;
         height: map-get($sizes, header-height);
-        width: 100vw;
+        width: 100%;
         top: 0;
         left: 0;
         display: block;
@@ -36,7 +52,7 @@ ts-theme {
       ts-content {
         flex-grow: 1;
         display: block;
-        width: 100vw;
+        width: 100%;
         overflow-x: hidden;
         overflow-y: auto;
         position: relative;
@@ -44,19 +60,6 @@ ts-theme {
       ts-footer {
         display: block;
         position: relative;
-      }
-      ion-menu {
-        background: map-get($colors, dark-theme-bg);
-        .menu-inner {
-          background: map-get($colors, dark-theme-bg);
-          ts-left-menu {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            background: map-get($colors, dark-theme-bg);
-            color: map-get($colors, dark-theme-fg);
-          }
-        }
       }
     }
   }
@@ -66,5 +69,13 @@ ts-theme {
     flex-grow: 1;
     overflow-x: hidden;
     overflow-y: auto;
+  }
+  &.ts-dark-theme {
+    background: map-get($colors, dark-theme-bg);
+    color: map-get($colors, dark-theme-fg);
+  }
+  &.ts-light-theme {
+    background: map-get($colors, light-theme-bg);
+    color: map-get($colors, light-theme-fg);
   }
 }

@@ -27,7 +27,7 @@
       }
     }
     
-    generic-control-widget {
+    dimmer-switch-widget {
       display: flex;
       text-align: center;
       flex-direction: column;
@@ -181,7 +181,7 @@
     }
     
     .ts-dark-theme {
-      generic-control-widget {
+      dimmer-switch-widget {
         #switch {
           #slider {
             .range {
@@ -245,7 +245,7 @@
     }
     
     .ts-light-theme {
-      generic-control-widget {
+      dimmer-switch-widget {
         #switch {
           border-radius: .5em;
           border: .2rem solid rgba(0, 0, 0, 0.15);

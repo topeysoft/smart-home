@@ -11,21 +11,13 @@
 </div>
 
 </div>-->
-<ts-theme class="ts-dark-theme">
+<ts-theme class="{{navigator.currentTheme}}" [class.xs]="respSvc.data.xs" [class.sm]="respSvc.data.sm" [class.md]="respSvc.data.md"
+  [class.lg]="respSvc.data.lg" [class.xl]="respSvc.data.xl">
   <ts-app>
-    <ts-header>
-      <!--<h1 class="display-1">test</h1>-->
-      <ts-action-bar [title]="navigator.currentPage.component.title" [class.hide-border]="!navigator.currentPage.component.showHeaderBorder"></ts-action-bar>
-    </ts-header>
-    <ts-content>
-      <!--Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-      <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
-    </ts-content>
-    <ts-footer></ts-footer>
-    <ion-menu [content]="content">
-      <ts-left-menu></ts-left-menu>
+    <!--<ion-menu [content]="content">-->
+    <ts-left-menu></ts-left-menu>
 
-      <!--<ion-content>
+    <!--<ion-content>
         <ion-list>
           <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}
@@ -33,8 +25,18 @@
         </ion-list>
       </ion-content>-->
 
-    </ion-menu>
-
+    <!--</ion-menu>-->
+    <ts-body>
+      <ts-header>
+        <!--<h1 class="display-1">test</h1>-->
+        <ts-action-bar [title]="navigator.currentPage.component.title" [class.hide-border]="!navigator.currentPage.component.showHeaderBorder"></ts-action-bar>
+      </ts-header>
+      <ts-content>
+        <!--Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+        <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+      </ts-content>
+      <ts-footer></ts-footer>
+    </ts-body>
 
   </ts-app>
 </ts-theme>

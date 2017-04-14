@@ -6,6 +6,7 @@
 // );
 $colors: (
   primary:    #387ef5,
+  primary-faded:    #0a2e57,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
@@ -14,7 +15,7 @@ $colors: (
   foreground:#ffffff,
   dark-theme-bg:#101c2a,
   dark-theme-fg:#ffffff,
-  light-theme-bg:#ffffff,
+  light-theme-bg:#eeeeee,
   light-theme-fg:#101c2a,
 );
 $sizes:(
@@ -22,8 +23,8 @@ $sizes:(
   50: 50%,
   75: 75%,
   100: 100%,
-    header-height:4.5rem,
-    action-bar-height:4.5rem,
+    header-height:4rem,
+    action-bar-height:4rem,
     tab-bar-height:4rem,
     footer-height:4rem,
     left-menu-width:20rem,
@@ -41,7 +42,7 @@ $layout_config:(
 
 $border-color-default: transparentize(map-get($colors, foreground), .85);
 $border-color-primary: transparentize(map-get($colors, primary), .75);
-$action-active-bg-primary: transparentize(map-get($colors, primary), .85);
+$action-active-bg-primary: map-get($colors, primary-faded);
 
 $enable-rounded:            false !default;
 $enable-shadows:            false !default;

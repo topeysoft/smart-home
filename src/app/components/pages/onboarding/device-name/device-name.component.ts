@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { PageBase } from '../../page-base';
 import { DeviceOnboardingService } from '../../../../services/onboarding/onboarding.service';
-import { TsNavigationService } from '../../../../services/navigation-service/navigation-service';
+import { TsNavigationService } from '../../../../services/navigation/navigation-service';
 import { routerTransition } from '../../../../utilities/router-animations';
 import { ViewController } from "ionic-angular";
 import { OnboardingDeviceSaveConfigComponent } from '../device-save-config/device-save-config.component';

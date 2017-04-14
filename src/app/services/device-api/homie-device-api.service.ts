@@ -30,7 +30,8 @@ export class HomieDeviceApiService {
             .catch(HttpResponseHandler.handleError).toPromise();
     }
     putDeviceConfig(configData:HomieDeviceConfig): Promise<any> {
-        return this.http.put(`${this.API_BASE_URL}config`, configData)
+        console.log('CONFIG', configData);
+        return this.http.put(`${this.API_BASE_URL}config`, '')
             .map(HttpResponseHandler.extractData)
             .catch(HttpResponseHandler.handleError).toPromise();
     }
