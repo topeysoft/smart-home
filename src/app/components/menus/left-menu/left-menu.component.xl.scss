@@ -1,0 +1,66 @@
+@import '../../../../styles/current-theme.scss';
+$shadow-depth:map-get($sizes, left-menu-depth);
+.display-xl {
+  ts-left-menu {
+    display: block;
+    position: relative;
+    height: 100vh;
+    width: map-get($sizes, left-menu-width);
+    left: 0; // -(map-get($sizes, left-menu-width));
+    top: 0;
+    z-index: map-get($z-indexes, left-menu);
+    transition: left .2s ease-in-out;
+    -webkit-box-shadow: .3rem 0 .3rem 0 rgba(0, 0, 0, .15);
+    box-shadow: .3rem 0 .3rem 0 rgba(0, 0, 0, .15);
+    .wrapper {
+      position: relative;
+      display: flex;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+    #overlay {
+      background: rgba(0, 0, 0, 0.1);
+      display: none;
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    &.show {
+      left: 0;
+      width: map-get($sizes, left-menu-width);
+      menu-item {
+        menu-icon {
+          padding-right: 1rem;
+          font-size: 2.5rem;
+          text-align: center;
+        }
+        menu-text {
+          display: inline-block;
+        }
+      }
+      #overlay {
+        display: none;
+      }
+    }
+    menu-list {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      menu-item {
+        menu-icon {
+          text-align: center;
+          padding-left: 1rem;
+          font-size: 2.5rem;
+          text-align: center;
+        }
+        menu-text {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}

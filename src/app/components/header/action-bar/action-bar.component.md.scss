@@ -1,0 +1,6 @@
+@import '../../../../styles/current-theme.scss';
+.display-md {
+  ts-action-bar {
+   z-index: map-get($z-indexes, left-menu)+1;
+  }
+}

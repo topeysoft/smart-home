@@ -1,0 +1,8 @@
+<slide-wrapper>
+  <div class="slider-main" [class.disabled]="isOff">
+    <div class="range-indicator" [style.height]="level+'%'" [style.background]="color"></div>
+    <input min="0" max="100" [(ngModel)]="level" type="range" class="range" />
+    <!--<span class="knob">=</span>-->
+  </div>
+  <!--<span class="label"> Slider&nbsp;Label  </span>-->
+</slide-wrapper>
